@@ -1,0 +1,8 @@
+Release Notes
+CDMI Reference Implementation Version 1.0e
+
+This version of the CDMI Reference Implementation conforms to version 1.0.2 of the CDMI specification which is also an ISO standard.
+
+
+Further improvements are being made to this reference implementation and not all features of CDMI are implemented in this version.
+
