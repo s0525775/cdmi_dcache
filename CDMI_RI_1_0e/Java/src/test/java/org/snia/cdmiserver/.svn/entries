@@ -26,12 +26,104 @@ mac
 
 41a91c66-b067-4729-a1d4-fe814f4e50cf
 
+CDMIPwTest.java
+file
+
+
+
+add
+
+28daaff0ac674738641dbba9f8367a8e
+
+
+
+
+
+
+
+
+
+
+
+copied
+https://svn.sniatechcenter.org/repos/cloud/Trunk/Java/src/test/java/org/snia/cdmiserver/CDMItest.java
+368
+
+CDMITest.java
+file
+
+
+
+add
+
+28daaff0ac674738641dbba9f8367a8e
+
+
+
+
+
+
+
+
+
+
+
+copied
+https://svn.sniatechcenter.org/repos/cloud/Trunk/Java/src/test/java/org/snia/cdmiserver/CDMItest.java
+368
+
+CDMITlsOneWayTest.java
+file
+
+
+
+add
+
+28daaff0ac674738641dbba9f8367a8e
+
+
+
+
+
+
+
+
+
+
+
+copied
+https://svn.sniatechcenter.org/repos/cloud/Trunk/Java/src/test/java/org/snia/cdmiserver/CDMItest.java
+368
+
+CDMITlsTwoWayTest.java
+file
+
+
+
+add
+
+28daaff0ac674738641dbba9f8367a8e
+
+
+
+
+
+
+
+
+
+
+
+copied
+https://svn.sniatechcenter.org/repos/cloud/Trunk/Java/src/test/java/org/snia/cdmiserver/CDMItest.java
+368
+
 CDMItest.java
 file
 
 
 
-
+delete
 2012-12-11T18:15:36.000000Z
 28daaff0ac674738641dbba9f8367a8e
 2012-09-07T17:02:20.422060Z
