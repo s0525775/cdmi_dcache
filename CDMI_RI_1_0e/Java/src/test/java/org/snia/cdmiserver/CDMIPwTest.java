@@ -88,7 +88,7 @@ public class CDMIPwTest {
         }
     }
 
-    @Test
+    @Ignore
     public void testCapabilities() throws Exception {
         HelperClass.sleep(3000);
         HttpClient httpclient = new DefaultHttpClient();
@@ -170,7 +170,7 @@ public class CDMIPwTest {
         }// exception
     }
 
-    @Test
+    @Ignore
     public void testContainerUpdate() throws Exception {
         HelperClass.sleep(3000);
         HttpClient httpclient = new DefaultHttpClient();
@@ -212,7 +212,7 @@ public class CDMIPwTest {
         }// exception
     }
 
-    @Test
+    @Ignore
     public void testObjectCreate() throws Exception {
         HelperClass.sleep(3000);
         HttpClient httpclient = new DefaultHttpClient();
@@ -254,7 +254,7 @@ public class CDMIPwTest {
         }// exception
     }
 
-    @Test
+    @Ignore
     public void testObjectUpdate() throws Exception {
         HelperClass.sleep(3000);
         HttpClient httpclient = new DefaultHttpClient();
@@ -296,7 +296,7 @@ public class CDMIPwTest {
         }// exception
     }
 
-    @Test
+    @Ignore
     public void testObjectDelete() throws Exception {
         HelperClass.sleep(3000);
         HttpClient httpclient = new DefaultHttpClient();
@@ -330,7 +330,7 @@ public class CDMIPwTest {
         }// exception
     }
 
-    @Test
+    @Ignore
     public void testContainerDelete() throws Exception {
         HelperClass.sleep(3000);
         HttpClient httpclient = new DefaultHttpClient();

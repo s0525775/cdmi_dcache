@@ -79,8 +79,13 @@ import org.junit.Test;
  * @author Mark A. Carlson
  */
 public class CDMITlsOneWayTest {
-    private final static String KEYSTORE = "/home/Jana/cert.p12";
-    private final static String PASSWORD = "testing.1";
+    private final static String KEYSTORE = "/certs/client/keystore.jks";
+    private final static String PASSWORD = "test123";
+    private final static String TYPE = "JKS";
+
+    static {
+        System.setProperty("javax.net.debug", "ssl,handshake,record");
+    }
 
     public static class HelperClass {
         public static void sleep(long ms) {
@@ -98,13 +103,14 @@ public class CDMITlsOneWayTest {
         HttpClient httpclient;
 
         try {
-            TrustStrategy acceptingTrustStrategy = new TrustStrategy() {
-                @Override
-                public boolean isTrusted(X509Certificate[] certificate, String authType) throws CertificateException {
-                    return true;
-                }
-            };
-            SSLSocketFactory socketFactory = new SSLSocketFactory(acceptingTrustStrategy, SSLSocketFactory.ALLOW_ALL_HOSTNAME_VERIFIER);
+            KeyStore trustStore  = KeyStore.getInstance(TYPE);
+            FileInputStream fis = new FileInputStream(new File(KEYSTORE));
+            try {
+                trustStore.load(fis, PASSWORD.toCharArray());
+            } finally {
+                try { fis.close(); } catch (IOException ignore) {}
+            }
+            SSLSocketFactory socketFactory = new SSLSocketFactory(trustStore);
             Scheme scheme = new Scheme("https", 8543, socketFactory);
             SchemeRegistry registry = new SchemeRegistry();
             registry.register(scheme);
@@ -150,13 +156,14 @@ public class CDMITlsOneWayTest {
         HttpClient httpclient;
 
         try {
-            TrustStrategy acceptingTrustStrategy = new TrustStrategy() {
-                @Override
-                public boolean isTrusted(X509Certificate[] certificate, String authType) throws CertificateException {
-                    return true;
-                }
-            };
-            SSLSocketFactory socketFactory = new SSLSocketFactory(acceptingTrustStrategy, SSLSocketFactory.ALLOW_ALL_HOSTNAME_VERIFIER);
+            KeyStore trustStore  = KeyStore.getInstance(TYPE);
+            FileInputStream fis = new FileInputStream(new File(KEYSTORE));
+            try {
+                trustStore.load(fis, PASSWORD.toCharArray());
+            } finally {
+                try { fis.close(); } catch (IOException ignore) {}
+            }
+            SSLSocketFactory socketFactory = new SSLSocketFactory(trustStore);
             Scheme scheme = new Scheme("https", 8543, socketFactory);
             SchemeRegistry registry = new SchemeRegistry();
             registry.register(scheme);
@@ -205,7 +212,7 @@ public class CDMITlsOneWayTest {
 
         try {
             //KeyStore trustStore  = KeyStore.getInstance(KeyStore.getDefaultType());
-            KeyStore trustStore  = KeyStore.getInstance("PKCS12");
+            KeyStore trustStore  = KeyStore.getInstance(TYPE);
             FileInputStream fis = new FileInputStream(new File(KEYSTORE));
             try {
                 trustStore.load(fis, PASSWORD.toCharArray());
@@ -260,7 +267,7 @@ public class CDMITlsOneWayTest {
         HttpClient httpclient;
 
         try {
-            KeyStore trustStore  = KeyStore.getInstance("PKCS12");
+            KeyStore trustStore  = KeyStore.getInstance(TYPE);
             FileInputStream fis = new FileInputStream(new File(KEYSTORE));
             try {
                 trustStore.load(fis, PASSWORD.toCharArray());
@@ -315,7 +322,7 @@ public class CDMITlsOneWayTest {
         HttpClient httpclient;
 
         try {
-            KeyStore trustStore  = KeyStore.getInstance("PKCS12");
+            KeyStore trustStore  = KeyStore.getInstance(TYPE);
             FileInputStream fis = new FileInputStream(new File(KEYSTORE));
             try {
                 trustStore.load(fis, PASSWORD.toCharArray());
@@ -370,7 +377,7 @@ public class CDMITlsOneWayTest {
         HttpClient httpclient;
 
         try {
-            KeyStore trustStore  = KeyStore.getInstance("PKCS12");
+            KeyStore trustStore  = KeyStore.getInstance(TYPE);
             FileInputStream fis = new FileInputStream(new File(KEYSTORE));
             try {
                 trustStore.load(fis, PASSWORD.toCharArray());
@@ -417,7 +424,7 @@ public class CDMITlsOneWayTest {
         HttpClient httpclient;
 
         try {
-            KeyStore trustStore  = KeyStore.getInstance("PKCS12");
+            KeyStore trustStore  = KeyStore.getInstance(TYPE);
             FileInputStream fis = new FileInputStream(new File(KEYSTORE));
             try {
                 trustStore.load(fis, PASSWORD.toCharArray());

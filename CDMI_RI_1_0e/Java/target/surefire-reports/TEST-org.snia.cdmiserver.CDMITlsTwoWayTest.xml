@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite failures="7" time="21.876" errors="0" skipped="0" tests="7" name="org.snia.cdmiserver.CDMITlsTwoWayTest">
+<testsuite failures="1" time="3.664" errors="0" skipped="0" tests="1" name="org.snia.cdmiserver.CDMITlsTwoWayTest">
   <properties>
     <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
     <property name="sun.boot.library.path" value="/usr/lib/jvm/java-1.7.0-openjdk-1.7.0.55.x86_64/jre/lib/amd64"/>
@@ -33,7 +33,7 @@
     <property name="java.specification.name" value="Java Platform API Specification"/>
     <property name="java.class.version" value="51.0"/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
-    <property name="os.version" value="2.6.32-431.17.1.el6.x86_64"/>
+    <property name="os.version" value="2.6.32-431.20.3.el6.x86_64"/>
     <property name="user.home" value="/home/Jana"/>
     <property name="user.timezone" value="Europe/Berlin"/>
     <property name="java.awt.printerjob" value="sun.print.PSPrinterJob"/>
@@ -62,14 +62,14 @@
     <property name="sun.desktop" value="gnome"/>
     <property name="sun.cpu.isalist" value=""/>
   </properties>
-  <testcase time="3.436" classname="org.snia.cdmiserver.CDMITlsTwoWayTest" name="testContainerCreate">
+  <testcase time="3.62" classname="org.snia.cdmiserver.CDMITlsTwoWayTest" name="testContainerCreate">
     <failure message="expected:&lt;201&gt; but was:&lt;500&gt;" type="java.lang.AssertionError">java.lang.AssertionError: expected:&lt;201&gt; but was:&lt;500&gt;
 	at org.junit.Assert.fail(Assert.java:91)
 	at org.junit.Assert.failNotEquals(Assert.java:645)
 	at org.junit.Assert.assertEquals(Assert.java:126)
 	at org.junit.Assert.assertEquals(Assert.java:470)
 	at org.junit.Assert.assertEquals(Assert.java:454)
-	at org.snia.cdmiserver.CDMITlsTwoWayTest.testContainerCreate(CDMITlsTwoWayTest.java:183)
+	at org.snia.cdmiserver.CDMITlsTwoWayTest.testContainerCreate(CDMITlsTwoWayTest.java:202)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -99,289 +99,410 @@
 	at org.apache.maven.surefire.booter.SurefireStarter.runSuitesInProcessWhenForked(SurefireStarter.java:107)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:68)
 </failure>
-    <system-out>Headers : 2
-Connection: close
-Server: Jetty(8.1.15.v20140411)
----------
-HTTP/1.1
-500
-</system-out>
-  </testcase>
-  <testcase time="3.063" classname="org.snia.cdmiserver.CDMITlsTwoWayTest" name="testContainerUpdate">
-    <failure message="expected:&lt;201&gt; but was:&lt;500&gt;" type="java.lang.AssertionError">java.lang.AssertionError: expected:&lt;201&gt; but was:&lt;500&gt;
-	at org.junit.Assert.fail(Assert.java:91)
-	at org.junit.Assert.failNotEquals(Assert.java:645)
-	at org.junit.Assert.assertEquals(Assert.java:126)
-	at org.junit.Assert.assertEquals(Assert.java:470)
-	at org.junit.Assert.assertEquals(Assert.java:454)
-	at org.snia.cdmiserver.CDMITlsTwoWayTest.testContainerUpdate(CDMITlsTwoWayTest.java:237)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:606)
-	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:44)
-	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:15)
-	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:41)
-	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:20)
-	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:76)
-	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:50)
-	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:193)
-	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:52)
-	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:191)
-	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:42)
-	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:184)
-	at org.junit.runners.ParentRunner.run(ParentRunner.java:236)
-	at org.apache.maven.surefire.junit4.JUnit4TestSet.execute(JUnit4TestSet.java:53)
-	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:123)
-	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:104)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:606)
-	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:164)
-	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:110)
-	at org.apache.maven.surefire.booter.SurefireStarter.invokeProvider(SurefireStarter.java:175)
-	at org.apache.maven.surefire.booter.SurefireStarter.runSuitesInProcessWhenForked(SurefireStarter.java:107)
-	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:68)
-</failure>
-    <system-out>Headers : 2
-Connection: close
-Server: Jetty(8.1.15.v20140411)
----------
-HTTP/1.1
-500
-</system-out>
-  </testcase>
-  <testcase time="3.068" classname="org.snia.cdmiserver.CDMITlsTwoWayTest" name="testObjectCreate">
-    <failure message="expected:&lt;201&gt; but was:&lt;500&gt;" type="java.lang.AssertionError">java.lang.AssertionError: expected:&lt;201&gt; but was:&lt;500&gt;
-	at org.junit.Assert.fail(Assert.java:91)
-	at org.junit.Assert.failNotEquals(Assert.java:645)
-	at org.junit.Assert.assertEquals(Assert.java:126)
-	at org.junit.Assert.assertEquals(Assert.java:470)
-	at org.junit.Assert.assertEquals(Assert.java:454)
-	at org.snia.cdmiserver.CDMITlsTwoWayTest.testObjectCreate(CDMITlsTwoWayTest.java:298)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:606)
-	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:44)
-	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:15)
-	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:41)
-	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:20)
-	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:76)
-	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:50)
-	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:193)
-	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:52)
-	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:191)
-	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:42)
-	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:184)
-	at org.junit.runners.ParentRunner.run(ParentRunner.java:236)
-	at org.apache.maven.surefire.junit4.JUnit4TestSet.execute(JUnit4TestSet.java:53)
-	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:123)
-	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:104)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:606)
-	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:164)
-	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:110)
-	at org.apache.maven.surefire.booter.SurefireStarter.invokeProvider(SurefireStarter.java:175)
-	at org.apache.maven.surefire.booter.SurefireStarter.runSuitesInProcessWhenForked(SurefireStarter.java:107)
-	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:68)
-</failure>
-    <system-out>{
-&quot;mimetype&quot; : &quot;text/plain&quot;,
-&quot;value&quot; : &quot;This is a test&quot;,
-&quot;metadata&quot; : {&quot;color&quot; : &quot;yellow&quot;, &quot;test&quot; : &quot;Test2&quot;}
-}
+    <system-out>***
+found key for : client
+chain [0] = [
+[
+  Version: V3
+  Subject: EMAILADDRESS=s0525775@htw-berlin.de, CN=localhost, OU=IT, O=dCache, L=Berlin, ST=Germany, C=DE
+  Signature Algorithm: SHA1withRSA, OID = 1.2.840.113549.1.1.5
 
-Headers : 2
-Connection: close
-Server: Jetty(8.1.15.v20140411)
----------
-HTTP/1.1
-500
-</system-out>
-  </testcase>
-  <testcase time="3.064" classname="org.snia.cdmiserver.CDMITlsTwoWayTest" name="testObjectUpdate">
-    <failure message="expected:&lt;200&gt; but was:&lt;500&gt;" type="java.lang.AssertionError">java.lang.AssertionError: expected:&lt;200&gt; but was:&lt;500&gt;
-	at org.junit.Assert.fail(Assert.java:91)
-	at org.junit.Assert.failNotEquals(Assert.java:645)
-	at org.junit.Assert.assertEquals(Assert.java:126)
-	at org.junit.Assert.assertEquals(Assert.java:470)
-	at org.junit.Assert.assertEquals(Assert.java:454)
-	at org.snia.cdmiserver.CDMITlsTwoWayTest.testObjectUpdate(CDMITlsTwoWayTest.java:352)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:606)
-	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:44)
-	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:15)
-	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:41)
-	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:20)
-	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:76)
-	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:50)
-	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:193)
-	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:52)
-	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:191)
-	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:42)
-	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:184)
-	at org.junit.runners.ParentRunner.run(ParentRunner.java:236)
-	at org.apache.maven.surefire.junit4.JUnit4TestSet.execute(JUnit4TestSet.java:53)
-	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:123)
-	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:104)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:606)
-	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:164)
-	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:110)
-	at org.apache.maven.surefire.booter.SurefireStarter.invokeProvider(SurefireStarter.java:175)
-	at org.apache.maven.surefire.booter.SurefireStarter.runSuitesInProcessWhenForked(SurefireStarter.java:107)
-	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:68)
-</failure>
-    <system-out>{
-&quot;mimetype&quot; : &quot;text/plain&quot;,
-&quot;value&quot; : &quot;This is a new test&quot;,
-&quot;metadata&quot; : {&quot;color&quot; : &quot;orange&quot;, &quot;test&quot; : &quot;Test2&quot;}
-}
+  Key:  Sun RSA public key, 4096 bits
+  modulus: 937384382899571712659989964076398010718072424305866938023293460546387673192679490897320237534273306772735688102279563613778700508730138080893052564785925597321007197042718047336800563005544456311276449106159504059908093905886472942621207535520820204046290904101113226907824341861211702167375979914597766708041261720632873629739250681672269035561251754097646251062181441309235390780349484431553766326090655320087695206785630484711582295960718454746188909617152914676094312516813198006340725709204528636756396114582566301654252746723424423338826073328847578185033465701417681513898678517375880514310479222941269842537172420011131530505262428044303680374815361542548106234885759524053164887252595043608301883347007612155426307661367302934428799580239078665322023701675926366295721385151860442677041862652975123532470090525327730461875074058747247337092068540867291480037443863186962929347444593653380633142736012738053696812479441551908081377208263427351894365016940046539901283051305834127193189254633175238080086532597330343176257296229303793483422889169291584995892723183266955601877153777097079304961831255336899249522123031003816896222932721668351596887378381802801159028926489864235673948075106355505089539214677701521479014008341
+  public exponent: 65537
+  Validity: [From: Sat Jun 28 18:37:43 CEST 2014,
+               To: Sun Jun 28 18:37:43 CEST 2015]
+  Issuer: EMAILADDRESS=s0525775@htw-berlin.de, CN=localhost, OU=IT, O=dCache, L=Berlin, ST=Germany, C=DE
+  SerialNumber: [    08]
 
+Certificate Extensions: 5
+[1]: ObjectId: 2.16.840.1.113730.1.13 Criticality=false
+Extension unknown: DER encoded OCTET string =
+0000: 04 1F 16 1D 4F 70 65 6E   53 53 4C 20 47 65 6E 65  ....OpenSSL Gene
+0010: 72 61 74 65 64 20 43 65   72 74 69 66 69 63 61 74  rated Certificat
+0020: 65                                                 e
+
+
+[2]: ObjectId: 2.5.29.35 Criticality=false
+AuthorityKeyIdentifier [
+KeyIdentifier [
+0000: 9C A7 90 AC 8C 2F 4B 42   8E 19 1D 32 7F B2 EC 62  ...../KB...2...b
+0010: DF F2 91 DC                                        ....
+]
+[EMAILADDRESS=s0525775@htw-berlin.de, CN=localhost, OU=IT, O=dCache, L=Berlin, ST=Germany, C=DE]
+SerialNumber: [    e1bcccc6 f509f2f7]
+]
+
+[3]: ObjectId: 2.5.29.19 Criticality=false
+BasicConstraints:[
+  CA:false
+  PathLen: undefined
+]
+
+[4]: ObjectId: 2.5.29.17 Criticality=false
+SubjectAlternativeName [
+  RFC822Name: s0525775@htw-berlin.de
+]
+
+[5]: ObjectId: 2.5.29.14 Criticality=false
+SubjectKeyIdentifier [
+KeyIdentifier [
+0000: 20 0A BC 0E F6 D5 BC 3D   22 18 3B 53 55 0C 1D BA   ......=&quot;.;SU...
+0010: D3 A0 68 B8                                        ..h.
+]
+]
+
+Unparseable certificate extensions: 1
+[1]: ObjectId: 2.5.29.18 Criticality=false
+Unparseable IssuerAlternativeName extension due to
+java.io.IOException: No data available in passed DER encoded value.
+
+0000: 30 00                                              0.
+
+]
+  Algorithm: [SHA1withRSA]
+  Signature:
+0000: 68 8C 8F 7E 16 13 31 8C   97 29 5F E9 66 20 56 97  h.....1..)_.f V.
+0010: 01 9D A2 44 64 45 0D 95   9F A3 70 B9 3B 66 94 22  ...DdE....p.;f.&quot;
+0020: 29 A4 D3 76 C9 DF 30 3D   9B BE 25 47 28 71 8A 4D  )..v..0=..%G(q.M
+0030: 5F E9 37 BB 66 A8 0F A5   00 91 24 D7 6A 15 D8 2E  _.7.f.....$.j...
+0040: 9C 38 BB 5E D4 81 54 62   88 27 A9 FE A9 94 E6 B7  .8.^..Tb.&apos;......
+0050: AE 5C 6F 0D 91 76 7B 27   5C A7 45 66 13 75 E4 20  .\o..v.&apos;\.Ef.u. 
+0060: BC 3B 1D D1 5D 9F 95 0C   F6 F6 31 D9 D6 BE FB D7  .;..].....1.....
+0070: E7 D3 C6 60 91 AB AE AA   1A 53 02 8D 34 FB 64 64  ...`.....S..4.dd
+0080: 47 25 C5 1F CF 7A C4 8D   7F 10 E8 A6 8A 37 90 8C  G%...z.......7..
+0090: 6F 7F AB FF 7D 77 22 A3   9A 7C FD BC 80 F2 60 D1  o....w&quot;.......`.
+00A0: 89 0E 25 4E 1F 7B 9A 93   1E 0A 2C DC D8 72 E2 40  ..%N......,..r.@
+00B0: 68 3F 25 6D 80 8A B3 42   C9 68 13 FD A2 B9 5C 0C  h?%m...B.h....\.
+00C0: 44 45 77 4F 11 06 D9 03   B0 5C B3 95 20 5A 9E FF  DEwO.....\.. Z..
+00D0: E2 36 A4 D1 C8 93 38 5D   59 F2 49 08 AE AA 9D 04  .6....8]Y.I.....
+00E0: D4 99 B1 B4 9D F4 01 D2   5A 7C 81 35 75 70 B9 AC  ........Z..5up..
+00F0: 9E 78 28 FE 96 96 47 F0   2D D6 1B 60 1B DE 44 B1  .x(...G.-..`..D.
+0100: 9A DE 69 FE BE 41 BC CD   6E DA 28 17 07 E9 29 B5  ..i..A..n.(...).
+0110: A2 3E 10 7B 9A 2D 8C 41   48 B6 91 9C 91 80 82 3A  .&gt;...-.AH......:
+0120: FC 12 EC 4A 2B C6 A5 6D   71 06 3B B2 E5 06 F5 57  ...J+..mq.;....W
+0130: 7B CE 23 68 DB D4 8E 62   7A 77 E5 9D A4 B4 6F 71  ..#h...bzw....oq
+0140: E5 11 AC 67 5C 12 B5 36   41 40 CE 32 43 C7 D1 A9  ...g\..6A@.2C...
+0150: A9 C8 7A 42 89 A6 0D 71   90 20 3E DF 10 AF 83 AC  ..zB...q. &gt;.....
+0160: 30 DC 60 0F AE 05 05 18   AC 38 8A 45 31 2E D2 71  0.`......8.E1..q
+0170: DD A1 6D 8A AC D4 23 13   00 BA C5 73 2B 8C 99 C6  ..m...#....s+...
+0180: F3 98 F2 F6 53 BF 0F 7C   90 A2 27 6E 9F 85 B9 65  ....S.....&apos;n...e
+0190: 1B 8F BE A4 61 C2 BB 4E   8B CE DA 45 F8 3B 15 20  ....a..N...E.;. 
+01A0: 5B 1B 93 7E B5 AF E3 49   7B DF 5D 62 8E 92 C6 0B  [......I..]b....
+01B0: B4 84 07 A6 37 9E 31 F6   68 42 09 C5 8A 1F 1C 96  ....7.1.hB......
+01C0: 12 4A 16 3A A3 7A 51 2B   D6 22 82 71 7F 21 A2 7D  .J.:.zQ+.&quot;.q.!..
+01D0: 31 87 73 D6 4B ED 12 37   4E F9 92 EA B6 AA BC 97  1.s.K..7N.......
+01E0: 91 A3 5C 2C AF BC 8F 8B   3F 6E F2 2C CA 00 2B 03  ..\,....?n.,..+.
+01F0: 48 82 9F 3B D4 20 CD 9B   6C B8 3B F3 C0 7B CD 3F  H..;. ..l.;....?
+
+]
+***
+adding as trusted cert:
+  Subject: EMAILADDRESS=s0525775@htw-berlin.de, CN=localhost, OU=IT, O=dCache, L=Berlin, ST=Germany, C=DE
+  Issuer:  EMAILADDRESS=s0525775@htw-berlin.de, CN=localhost, OU=IT, O=dCache, L=Berlin, ST=Germany, C=DE
+  Algorithm: RSA; Serial number: 0x6
+  Valid from Sat Jun 28 13:20:52 CEST 2014 until Sun Jun 28 13:20:52 CEST 2015
+
+trigger seeding of SecureRandom
+done seeding SecureRandom
+Ignoring unsupported cipher suite: TLS_DHE_DSS_WITH_AES_128_CBC_SHA256
+Ignoring unsupported cipher suite: TLS_DHE_DSS_WITH_AES_256_CBC_SHA256
+Ignoring unsupported cipher suite: TLS_DHE_RSA_WITH_AES_128_CBC_SHA256
+Ignoring unsupported cipher suite: TLS_ECDH_RSA_WITH_AES_128_CBC_SHA256
+Ignoring unsupported cipher suite: TLS_DHE_RSA_WITH_AES_256_CBC_SHA256
+Ignoring unsupported cipher suite: TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384
+Ignoring unsupported cipher suite: TLS_ECDH_ECDSA_WITH_AES_256_CBC_SHA384
+Ignoring unsupported cipher suite: TLS_RSA_WITH_AES_256_CBC_SHA256
+Ignoring unsupported cipher suite: TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256
+Ignoring unsupported cipher suite: TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA384
+Ignoring unsupported cipher suite: TLS_ECDH_RSA_WITH_AES_256_CBC_SHA384
+Ignoring unsupported cipher suite: TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA256
+Ignoring unsupported cipher suite: TLS_ECDH_ECDSA_WITH_AES_128_CBC_SHA256
+Ignoring unsupported cipher suite: TLS_RSA_WITH_AES_128_CBC_SHA256
+main, setSoTimeout(0) called
+Allow unsafe renegotiation: false
+Allow legacy hello messages: true
+Is initial handshake: true
+Is secure renegotiation: false
+%% No cached client session
+*** ClientHello, TLSv1
+RandomCookie:  GMT: 1387132275 bytes = { 10, 119, 87, 179, 183, 78, 234, 172, 44, 218, 147, 245, 69, 78, 111, 167, 107, 76, 35, 146, 105, 143, 151, 211, 65, 246, 71, 5 }
+Session ID:  {}
+Cipher Suites: [TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA, TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA, TLS_RSA_WITH_AES_256_CBC_SHA, TLS_ECDH_ECDSA_WITH_AES_256_CBC_SHA, TLS_ECDH_RSA_WITH_AES_256_CBC_SHA, TLS_DHE_RSA_WITH_AES_256_CBC_SHA, TLS_DHE_DSS_WITH_AES_256_CBC_SHA, TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA, TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA, TLS_RSA_WITH_AES_128_CBC_SHA, TLS_ECDH_ECDSA_WITH_AES_128_CBC_SHA, TLS_ECDH_RSA_WITH_AES_128_CBC_SHA, TLS_DHE_RSA_WITH_AES_128_CBC_SHA, TLS_DHE_DSS_WITH_AES_128_CBC_SHA, TLS_ECDHE_ECDSA_WITH_RC4_128_SHA, TLS_ECDHE_RSA_WITH_RC4_128_SHA, SSL_RSA_WITH_RC4_128_SHA, TLS_ECDH_ECDSA_WITH_RC4_128_SHA, TLS_ECDH_RSA_WITH_RC4_128_SHA, TLS_ECDHE_ECDSA_WITH_3DES_EDE_CBC_SHA, TLS_ECDHE_RSA_WITH_3DES_EDE_CBC_SHA, SSL_RSA_WITH_3DES_EDE_CBC_SHA, TLS_ECDH_ECDSA_WITH_3DES_EDE_CBC_SHA, TLS_ECDH_RSA_WITH_3DES_EDE_CBC_SHA, SSL_DHE_RSA_WITH_3DES_EDE_CBC_SHA, SSL_DHE_DSS_WITH_3DES_EDE_CBC_SHA, SSL_RSA_WITH_RC4_128_MD5, TLS_EMPTY_RENEGOTIATION_INFO_SCSV]
+Compression Methods:  { 0 }
+Extension elliptic_curves, curve names: {secp256r1, sect163k1, sect163r2, secp192r1, secp224r1, sect233k1, sect233r1, sect283k1, sect283r1, secp384r1, sect409k1, sect409r1, secp521r1, sect571k1, sect571r1, secp160k1, secp160r1, secp160r2, sect163r1, secp192k1, sect193r1, sect193r2, secp224k1, sect239k1, secp256k1}
+Extension ec_point_formats, formats: [uncompressed]
+***
+main, WRITE: TLSv1 Handshake, length = 163
+main, READ: TLSv1 Handshake, length = 1667
+*** ServerHello, TLSv1
+RandomCookie:  GMT: 1387132275 bytes = { 226, 38, 118, 100, 121, 110, 83, 29, 92, 167, 127, 218, 242, 32, 207, 155, 82, 246, 195, 202, 44, 106, 146, 154, 68, 61, 230, 248 }
+Session ID:  {83, 174, 245, 115, 25, 31, 86, 49, 210, 109, 195, 150, 75, 147, 134, 51, 125, 179, 160, 112, 57, 97, 130, 18, 14, 123, 125, 26, 51, 21, 248, 98}
+Cipher Suite: TLS_RSA_WITH_AES_256_CBC_SHA
+Compression Method: 0
+Extension renegotiation_info, renegotiated_connection: &lt;empty&gt;
+***
+%% Initialized:  [Session-1, TLS_RSA_WITH_AES_256_CBC_SHA]
+** TLS_RSA_WITH_AES_256_CBC_SHA
+*** Certificate chain
+chain [0] = [
+[
+  Version: V1
+  Subject: EMAILADDRESS=s0525775@htw-berlin.de, CN=localhost, OU=IT, O=dCache, L=Berlin, ST=Germany, C=DE
+  Signature Algorithm: SHA1withRSA, OID = 1.2.840.113549.1.1.5
+
+  Key:  Sun RSA public key, 4096 bits
+  modulus: 633497002599054184679662420660119507494518083203565468228890323672495523042120963641328649337681625309324943543879543253186930139182027795312296941658595437138550692392977183591110402104394131230919571648484066076910480463596044405887544799591977873169178404562830582793159276163780135830335157545641373302587766056559066457457371775716655375302869284766643376188782939916667728541138493204620284794294200029733077411148613884361231490201798426688045739494895990047270196512851711780910451122038061268382261684652129093246063402884738912841212262950449057778765351423558260998216360599709059435754374683036419423039209802655451434386403215516090606306197503944453489926510415828059000435701120282520132582882694043448096577375404044766873331410752169025875384216465957667343720087245058081843132025729999909772217798640230759353598947858738743129287128172882891049339955300317938260981109386657398477509211094699334866850377051160470391801939281104822983025261763773979484264150385199973841256226649599030655159122552421454389383776497712441311345113697228616731833807791666621677499146302968658287271796129367609672264538155203671074075984094957259969479681643164594445727175892957594857741800589894514068154766079798261784256357153
+  public exponent: 65537
+  Validity: [From: Sat Jun 28 13:20:52 CEST 2014,
+               To: Sun Jun 28 13:20:52 CEST 2015]
+  Issuer: EMAILADDRESS=s0525775@htw-berlin.de, CN=localhost, OU=IT, O=dCache, L=Berlin, ST=Germany, C=DE
+  SerialNumber: [    06]
+
+]
+  Algorithm: [SHA1withRSA]
+  Signature:
+0000: 56 2D 19 2B 44 5F 9E FF   BB 08 AE EA 78 AA 46 41  V-.+D_......x.FA
+0010: 37 6F 10 30 0E F6 2C 92   EC E4 DF 74 61 86 93 C9  7o.0..,....ta...
+0020: 20 92 D9 C2 1A 41 8F A3   75 FF FF D5 BC 16 48 EF   ....A..u.....H.
+0030: 22 3C 2A 7B 58 07 E5 CF   1E 5D 73 98 CD A2 31 A4  &quot;&lt;*.X....]s...1.
+0040: 97 FE 20 D9 5A A4 56 0F   71 BE 61 9C 22 69 3E 3B  .. .Z.V.q.a.&quot;i&gt;;
+0050: 70 2B 26 F1 64 27 E8 85   0D 25 44 B7 6C 74 3B 40  p+&amp;.d&apos;...%D.lt;@
+0060: 72 E9 73 D2 21 46 E8 95   A9 7E 18 8E 18 24 15 09  r.s.!F.......$..
+0070: 64 B1 DC 04 2C 56 29 73   64 11 5D B8 57 3F 8C 09  d...,V)sd.].W?..
+0080: 6C 66 7B 46 03 B7 53 A4   F2 91 78 B6 1D 09 20 6A  lf.F..S...x... j
+0090: 06 D4 D5 F9 29 B6 8A 09   CA B9 28 66 92 C8 84 7D  ....).....(f....
+00A0: 04 83 96 AD D9 DE 0B B8   AD 55 5A 12 43 A5 85 A9  .........UZ.C...
+00B0: 9B 32 8F 49 AD A4 E6 37   E8 02 AD 71 54 77 AE 4C  .2.I...7...qTw.L
+00C0: 6A B2 4F A5 1A 19 BC 37   29 E4 4E 31 C8 0E 0B A7  j.O....7).N1....
+00D0: 2D E7 04 58 99 0A A3 2E   95 D9 3B 97 5A D4 23 31  -..X......;.Z.#1
+00E0: 7A 89 A6 01 A8 1D 8F F0   C7 60 44 19 2C A0 D4 D9  z........`D.,...
+00F0: D0 FE 8A 9A C2 5D 35 40   8A F1 EF 25 07 22 15 02  .....]5@...%.&quot;..
+0100: 69 64 9B 5D E2 1C 57 33   67 55 AB 74 92 4F CF 69  id.]..W3gU.t.O.i
+0110: CA 2E E9 78 93 34 88 92   61 79 B6 AF CB DF 03 E8  ...x.4..ay......
+0120: FE EC F8 F3 11 18 DE AD   2B D3 C0 C7 2F 7E 80 FE  ........+.../...
+0130: DD F6 00 3A 74 61 AF 3A   F8 42 37 D5 1A 7B 5E 49  ...:ta.:.B7...^I
+0140: 3C DD 35 56 71 A3 00 AE   08 DE 73 C3 B1 04 9F 4A  &lt;.5Vq.....s....J
+0150: 2B 1F 39 9F 28 0E 99 49   70 BB 0B 95 3A 05 1E FD  +.9.(..Ip...:...
+0160: 0C F3 D4 80 BA 78 18 EF   BA 02 D5 08 92 F8 77 EC  .....x........w.
+0170: 25 04 52 80 C4 C6 93 C5   D9 8A 5E 65 B3 E7 29 AE  %.R.......^e..).
+0180: AA F6 03 27 D8 6E 98 84   02 19 99 4B E7 0B A0 58  ...&apos;.n.....K...X
+0190: 4D C5 7C 07 68 2A 62 8F   A2 CD DD EA 90 0D 2A 6F  M...h*b.......*o
+01A0: 30 7E D2 19 E5 D0 FC 8D   5B 73 1C 4F CC FB 2A 5A  0.......[s.O..*Z
+01B0: 92 6B 5B F2 41 BB 07 34   B5 6A 62 53 E4 C2 CE 2F  .k[.A..4.jbS.../
+01C0: 2A 4E 55 F3 CC 96 73 4C   77 80 FB AF C7 11 FC 24  *NU...sLw......$
+01D0: 87 E6 61 DE 72 63 57 C9   FF 23 98 E3 60 E5 A9 1C  ..a.rcW..#..`...
+01E0: 86 BD 11 31 0E D2 E5 B5   C5 BC 54 A9 D5 32 23 5B  ...1......T..2#[
+01F0: 1B E6 ED F9 CE 89 85 2E   9C E3 53 A8 02 8E B2 E0  ..........S.....
+
+]
+***
+Found trusted certificate:
+[
+[
+  Version: V1
+  Subject: EMAILADDRESS=s0525775@htw-berlin.de, CN=localhost, OU=IT, O=dCache, L=Berlin, ST=Germany, C=DE
+  Signature Algorithm: SHA1withRSA, OID = 1.2.840.113549.1.1.5
+
+  Key:  Sun RSA public key, 4096 bits
+  modulus: 633497002599054184679662420660119507494518083203565468228890323672495523042120963641328649337681625309324943543879543253186930139182027795312296941658595437138550692392977183591110402104394131230919571648484066076910480463596044405887544799591977873169178404562830582793159276163780135830335157545641373302587766056559066457457371775716655375302869284766643376188782939916667728541138493204620284794294200029733077411148613884361231490201798426688045739494895990047270196512851711780910451122038061268382261684652129093246063402884738912841212262950449057778765351423558260998216360599709059435754374683036419423039209802655451434386403215516090606306197503944453489926510415828059000435701120282520132582882694043448096577375404044766873331410752169025875384216465957667343720087245058081843132025729999909772217798640230759353598947858738743129287128172882891049339955300317938260981109386657398477509211094699334866850377051160470391801939281104822983025261763773979484264150385199973841256226649599030655159122552421454389383776497712441311345113697228616731833807791666621677499146302968658287271796129367609672264538155203671074075984094957259969479681643164594445727175892957594857741800589894514068154766079798261784256357153
+  public exponent: 65537
+  Validity: [From: Sat Jun 28 13:20:52 CEST 2014,
+               To: Sun Jun 28 13:20:52 CEST 2015]
+  Issuer: EMAILADDRESS=s0525775@htw-berlin.de, CN=localhost, OU=IT, O=dCache, L=Berlin, ST=Germany, C=DE
+  SerialNumber: [    06]
+
+]
+  Algorithm: [SHA1withRSA]
+  Signature:
+0000: 56 2D 19 2B 44 5F 9E FF   BB 08 AE EA 78 AA 46 41  V-.+D_......x.FA
+0010: 37 6F 10 30 0E F6 2C 92   EC E4 DF 74 61 86 93 C9  7o.0..,....ta...
+0020: 20 92 D9 C2 1A 41 8F A3   75 FF FF D5 BC 16 48 EF   ....A..u.....H.
+0030: 22 3C 2A 7B 58 07 E5 CF   1E 5D 73 98 CD A2 31 A4  &quot;&lt;*.X....]s...1.
+0040: 97 FE 20 D9 5A A4 56 0F   71 BE 61 9C 22 69 3E 3B  .. .Z.V.q.a.&quot;i&gt;;
+0050: 70 2B 26 F1 64 27 E8 85   0D 25 44 B7 6C 74 3B 40  p+&amp;.d&apos;...%D.lt;@
+0060: 72 E9 73 D2 21 46 E8 95   A9 7E 18 8E 18 24 15 09  r.s.!F.......$..
+0070: 64 B1 DC 04 2C 56 29 73   64 11 5D B8 57 3F 8C 09  d...,V)sd.].W?..
+0080: 6C 66 7B 46 03 B7 53 A4   F2 91 78 B6 1D 09 20 6A  lf.F..S...x... j
+0090: 06 D4 D5 F9 29 B6 8A 09   CA B9 28 66 92 C8 84 7D  ....).....(f....
+00A0: 04 83 96 AD D9 DE 0B B8   AD 55 5A 12 43 A5 85 A9  .........UZ.C...
+00B0: 9B 32 8F 49 AD A4 E6 37   E8 02 AD 71 54 77 AE 4C  .2.I...7...qTw.L
+00C0: 6A B2 4F A5 1A 19 BC 37   29 E4 4E 31 C8 0E 0B A7  j.O....7).N1....
+00D0: 2D E7 04 58 99 0A A3 2E   95 D9 3B 97 5A D4 23 31  -..X......;.Z.#1
+00E0: 7A 89 A6 01 A8 1D 8F F0   C7 60 44 19 2C A0 D4 D9  z........`D.,...
+00F0: D0 FE 8A 9A C2 5D 35 40   8A F1 EF 25 07 22 15 02  .....]5@...%.&quot;..
+0100: 69 64 9B 5D E2 1C 57 33   67 55 AB 74 92 4F CF 69  id.]..W3gU.t.O.i
+0110: CA 2E E9 78 93 34 88 92   61 79 B6 AF CB DF 03 E8  ...x.4..ay......
+0120: FE EC F8 F3 11 18 DE AD   2B D3 C0 C7 2F 7E 80 FE  ........+.../...
+0130: DD F6 00 3A 74 61 AF 3A   F8 42 37 D5 1A 7B 5E 49  ...:ta.:.B7...^I
+0140: 3C DD 35 56 71 A3 00 AE   08 DE 73 C3 B1 04 9F 4A  &lt;.5Vq.....s....J
+0150: 2B 1F 39 9F 28 0E 99 49   70 BB 0B 95 3A 05 1E FD  +.9.(..Ip...:...
+0160: 0C F3 D4 80 BA 78 18 EF   BA 02 D5 08 92 F8 77 EC  .....x........w.
+0170: 25 04 52 80 C4 C6 93 C5   D9 8A 5E 65 B3 E7 29 AE  %.R.......^e..).
+0180: AA F6 03 27 D8 6E 98 84   02 19 99 4B E7 0B A0 58  ...&apos;.n.....K...X
+0190: 4D C5 7C 07 68 2A 62 8F   A2 CD DD EA 90 0D 2A 6F  M...h*b.......*o
+01A0: 30 7E D2 19 E5 D0 FC 8D   5B 73 1C 4F CC FB 2A 5A  0.......[s.O..*Z
+01B0: 92 6B 5B F2 41 BB 07 34   B5 6A 62 53 E4 C2 CE 2F  .k[.A..4.jbS.../
+01C0: 2A 4E 55 F3 CC 96 73 4C   77 80 FB AF C7 11 FC 24  *NU...sLw......$
+01D0: 87 E6 61 DE 72 63 57 C9   FF 23 98 E3 60 E5 A9 1C  ..a.rcW..#..`...
+01E0: 86 BD 11 31 0E D2 E5 B5   C5 BC 54 A9 D5 32 23 5B  ...1......T..2#[
+01F0: 1B E6 ED F9 CE 89 85 2E   9C E3 53 A8 02 8E B2 E0  ..........S.....
+
+]
+*** CertificateRequest
+Cert Types: RSA, DSS, ECDSA
+Cert Authorities:
+&lt;EMAILADDRESS=s0525775@htw-berlin.de, CN=localhost, OU=IT, O=dCache, L=Berlin, ST=Germany, C=DE&gt;
+*** ServerHelloDone
+matching alias: client
+*** Certificate chain
+chain [0] = [
+[
+  Version: V3
+  Subject: EMAILADDRESS=s0525775@htw-berlin.de, CN=localhost, OU=IT, O=dCache, L=Berlin, ST=Germany, C=DE
+  Signature Algorithm: SHA1withRSA, OID = 1.2.840.113549.1.1.5
+
+  Key:  Sun RSA public key, 4096 bits
+  modulus: 937384382899571712659989964076398010718072424305866938023293460546387673192679490897320237534273306772735688102279563613778700508730138080893052564785925597321007197042718047336800563005544456311276449106159504059908093905886472942621207535520820204046290904101113226907824341861211702167375979914597766708041261720632873629739250681672269035561251754097646251062181441309235390780349484431553766326090655320087695206785630484711582295960718454746188909617152914676094312516813198006340725709204528636756396114582566301654252746723424423338826073328847578185033465701417681513898678517375880514310479222941269842537172420011131530505262428044303680374815361542548106234885759524053164887252595043608301883347007612155426307661367302934428799580239078665322023701675926366295721385151860442677041862652975123532470090525327730461875074058747247337092068540867291480037443863186962929347444593653380633142736012738053696812479441551908081377208263427351894365016940046539901283051305834127193189254633175238080086532597330343176257296229303793483422889169291584995892723183266955601877153777097079304961831255336899249522123031003816896222932721668351596887378381802801159028926489864235673948075106355505089539214677701521479014008341
+  public exponent: 65537
+  Validity: [From: Sat Jun 28 18:37:43 CEST 2014,
+               To: Sun Jun 28 18:37:43 CEST 2015]
+  Issuer: EMAILADDRESS=s0525775@htw-berlin.de, CN=localhost, OU=IT, O=dCache, L=Berlin, ST=Germany, C=DE
+  SerialNumber: [    08]
+
+Certificate Extensions: 5
+[1]: ObjectId: 2.16.840.1.113730.1.13 Criticality=false
+Extension unknown: DER encoded OCTET string =
+0000: 04 1F 16 1D 4F 70 65 6E   53 53 4C 20 47 65 6E 65  ....OpenSSL Gene
+0010: 72 61 74 65 64 20 43 65   72 74 69 66 69 63 61 74  rated Certificat
+0020: 65                                                 e
+
+
+[2]: ObjectId: 2.5.29.35 Criticality=false
+AuthorityKeyIdentifier [
+KeyIdentifier [
+0000: 9C A7 90 AC 8C 2F 4B 42   8E 19 1D 32 7F B2 EC 62  ...../KB...2...b
+0010: DF F2 91 DC                                        ....
+]
+[EMAILADDRESS=s0525775@htw-berlin.de, CN=localhost, OU=IT, O=dCache, L=Berlin, ST=Germany, C=DE]
+SerialNumber: [    e1bcccc6 f509f2f7]
+]
+
+[3]: ObjectId: 2.5.29.19 Criticality=false
+BasicConstraints:[
+  CA:false
+  PathLen: undefined
+]
+
+[4]: ObjectId: 2.5.29.17 Criticality=false
+SubjectAlternativeName [
+  RFC822Name: s0525775@htw-berlin.de
+]
+
+[5]: ObjectId: 2.5.29.14 Criticality=false
+SubjectKeyIdentifier [
+KeyIdentifier [
+0000: 20 0A BC 0E F6 D5 BC 3D   22 18 3B 53 55 0C 1D BA   ......=&quot;.;SU...
+0010: D3 A0 68 B8                                        ..h.
+]
+]
+
+Unparseable certificate extensions: 1
+[1]: ObjectId: 2.5.29.18 Criticality=false
+Unparseable IssuerAlternativeName extension due to
+java.io.IOException: No data available in passed DER encoded value.
+
+0000: 30 00                                              0.
+
+]
+  Algorithm: [SHA1withRSA]
+  Signature:
+0000: 68 8C 8F 7E 16 13 31 8C   97 29 5F E9 66 20 56 97  h.....1..)_.f V.
+0010: 01 9D A2 44 64 45 0D 95   9F A3 70 B9 3B 66 94 22  ...DdE....p.;f.&quot;
+0020: 29 A4 D3 76 C9 DF 30 3D   9B BE 25 47 28 71 8A 4D  )..v..0=..%G(q.M
+0030: 5F E9 37 BB 66 A8 0F A5   00 91 24 D7 6A 15 D8 2E  _.7.f.....$.j...
+0040: 9C 38 BB 5E D4 81 54 62   88 27 A9 FE A9 94 E6 B7  .8.^..Tb.&apos;......
+0050: AE 5C 6F 0D 91 76 7B 27   5C A7 45 66 13 75 E4 20  .\o..v.&apos;\.Ef.u. 
+0060: BC 3B 1D D1 5D 9F 95 0C   F6 F6 31 D9 D6 BE FB D7  .;..].....1.....
+0070: E7 D3 C6 60 91 AB AE AA   1A 53 02 8D 34 FB 64 64  ...`.....S..4.dd
+0080: 47 25 C5 1F CF 7A C4 8D   7F 10 E8 A6 8A 37 90 8C  G%...z.......7..
+0090: 6F 7F AB FF 7D 77 22 A3   9A 7C FD BC 80 F2 60 D1  o....w&quot;.......`.
+00A0: 89 0E 25 4E 1F 7B 9A 93   1E 0A 2C DC D8 72 E2 40  ..%N......,..r.@
+00B0: 68 3F 25 6D 80 8A B3 42   C9 68 13 FD A2 B9 5C 0C  h?%m...B.h....\.
+00C0: 44 45 77 4F 11 06 D9 03   B0 5C B3 95 20 5A 9E FF  DEwO.....\.. Z..
+00D0: E2 36 A4 D1 C8 93 38 5D   59 F2 49 08 AE AA 9D 04  .6....8]Y.I.....
+00E0: D4 99 B1 B4 9D F4 01 D2   5A 7C 81 35 75 70 B9 AC  ........Z..5up..
+00F0: 9E 78 28 FE 96 96 47 F0   2D D6 1B 60 1B DE 44 B1  .x(...G.-..`..D.
+0100: 9A DE 69 FE BE 41 BC CD   6E DA 28 17 07 E9 29 B5  ..i..A..n.(...).
+0110: A2 3E 10 7B 9A 2D 8C 41   48 B6 91 9C 91 80 82 3A  .&gt;...-.AH......:
+0120: FC 12 EC 4A 2B C6 A5 6D   71 06 3B B2 E5 06 F5 57  ...J+..mq.;....W
+0130: 7B CE 23 68 DB D4 8E 62   7A 77 E5 9D A4 B4 6F 71  ..#h...bzw....oq
+0140: E5 11 AC 67 5C 12 B5 36   41 40 CE 32 43 C7 D1 A9  ...g\..6A@.2C...
+0150: A9 C8 7A 42 89 A6 0D 71   90 20 3E DF 10 AF 83 AC  ..zB...q. &gt;.....
+0160: 30 DC 60 0F AE 05 05 18   AC 38 8A 45 31 2E D2 71  0.`......8.E1..q
+0170: DD A1 6D 8A AC D4 23 13   00 BA C5 73 2B 8C 99 C6  ..m...#....s+...
+0180: F3 98 F2 F6 53 BF 0F 7C   90 A2 27 6E 9F 85 B9 65  ....S.....&apos;n...e
+0190: 1B 8F BE A4 61 C2 BB 4E   8B CE DA 45 F8 3B 15 20  ....a..N...E.;. 
+01A0: 5B 1B 93 7E B5 AF E3 49   7B DF 5D 62 8E 92 C6 0B  [......I..]b....
+01B0: B4 84 07 A6 37 9E 31 F6   68 42 09 C5 8A 1F 1C 96  ....7.1.hB......
+01C0: 12 4A 16 3A A3 7A 51 2B   D6 22 82 71 7F 21 A2 7D  .J.:.zQ+.&quot;.q.!..
+01D0: 31 87 73 D6 4B ED 12 37   4E F9 92 EA B6 AA BC 97  1.s.K..7N.......
+01E0: 91 A3 5C 2C AF BC 8F 8B   3F 6E F2 2C CA 00 2B 03  ..\,....?n.,..+.
+01F0: 48 82 9F 3B D4 20 CD 9B   6C B8 3B F3 C0 7B CD 3F  H..;. ..l.;....?
+
+]
+***
+*** ClientKeyExchange, RSA PreMasterSecret, TLSv1
+main, WRITE: TLSv1 Handshake, length = 2288
+SESSION KEYGEN:
+PreMaster Secret:
+0000: 03 01 2D D2 70 20 AB 76   C6 9F C6 19 52 90 73 79  ..-.p .v....R.sy
+0010: 63 2A B9 52 E2 64 5A 5E   D1 19 8C 0C B7 87 30 2D  c*.R.dZ^......0-
+0020: B3 BE 49 E4 72 6C F5 13   C2 DF 36 C6 75 F7 D2 2C  ..I.rl....6.u..,
+CONNECTION KEYGEN:
+Client Nonce:
+0000: 53 AE F5 73 0A 77 57 B3   B7 4E EA AC 2C DA 93 F5  S..s.wW..N..,...
+0010: 45 4E 6F A7 6B 4C 23 92   69 8F 97 D3 41 F6 47 05  ENo.kL#.i...A.G.
+Server Nonce:
+0000: 53 AE F5 73 E2 26 76 64   79 6E 53 1D 5C A7 7F DA  S..s.&amp;vdynS.\...
+0010: F2 20 CF 9B 52 F6 C3 CA   2C 6A 92 9A 44 3D E6 F8  . ..R...,j..D=..
+Master Secret:
+0000: 2B E2 70 61 D2 51 66 0A   91 FE 24 2B 4D 87 AE BF  +.pa.Qf...$+M...
+0010: 17 4F DD 5F AF BD 8B A3   FE 18 CB CA 1D AB C2 6C  .O._...........l
+0020: 2C A8 92 9E 03 A1 C2 25   85 5F 79 EF 47 34 50 D1  ,......%._y.G4P.
+Client MAC write Secret:
+0000: F1 50 08 9F B1 33 43 D8   F9 08 F4 7F 13 AE 61 96  .P...3C.......a.
+0010: 98 4F 48 8E                                        .OH.
+Server MAC write Secret:
+0000: A8 3F 77 E0 3C 34 7F 5A   C3 24 03 0D 33 94 86 CA  .?w.&lt;4.Z.$..3...
+0010: FC BF 35 FB                                        ..5.
+Client write key:
+0000: BC FF 1D BB C3 4D F1 83   AB AF FB 48 96 08 75 BE  .....M.....H..u.
+0010: E8 11 80 FC 4F 59 65 BE   4F 5A A5 B2 A4 29 6B 9F  ....OYe.OZ...)k.
+Server write key:
+0000: 9D BD 66 D2 10 8F AD 73   9E F8 4D 03 34 1B CB 11  ..f....s..M.4...
+0010: 37 DC 06 FE 1F C9 06 C1   F3 76 95 5B 0B B6 3D 7D  7........v.[..=.
+Client write IV:
+0000: 0A F6 D1 EC BC 71 32 0F   FE FC 09 1C C2 8C EA 41  .....q2........A
+Server write IV:
+0000: D8 89 CB 98 59 AA 0A CA   B5 35 BA B2 05 DA 96 F8  ....Y....5......
+*** CertificateVerify
+main, WRITE: TLSv1 Handshake, length = 518
+main, WRITE: TLSv1 Change Cipher Spec, length = 1
+*** Finished
+verify_data:  { 241, 35, 193, 58, 108, 163, 206, 21, 71, 85, 126, 93 }
+***
+main, WRITE: TLSv1 Handshake, length = 48
+main, READ: TLSv1 Change Cipher Spec, length = 1
+main, READ: TLSv1 Handshake, length = 48
+*** Finished
+verify_data:  { 50, 168, 100, 68, 226, 1, 120, 218, 129, 18, 221, 204 }
+***
+%% Cached client session: [Session-1, TLS_RSA_WITH_AES_256_CBC_SHA]
+main, setSoTimeout(0) called
+main, WRITE: TLSv1 Application Data, length = 304
+main, READ: TLSv1 Application Data, length = 112
 Headers : 2
-Connection: close
-Server: Jetty(8.1.15.v20140411)
----------
-HTTP/1.1
-500
-</system-out>
-  </testcase>
-  <testcase time="3.062" classname="org.snia.cdmiserver.CDMITlsTwoWayTest" name="testObjectDelete">
-    <failure message="expected:&lt;204&gt; but was:&lt;500&gt;" type="java.lang.AssertionError">java.lang.AssertionError: expected:&lt;204&gt; but was:&lt;500&gt;
-	at org.junit.Assert.fail(Assert.java:91)
-	at org.junit.Assert.failNotEquals(Assert.java:645)
-	at org.junit.Assert.assertEquals(Assert.java:126)
-	at org.junit.Assert.assertEquals(Assert.java:470)
-	at org.junit.Assert.assertEquals(Assert.java:454)
-	at org.snia.cdmiserver.CDMITlsTwoWayTest.testObjectDelete(CDMITlsTwoWayTest.java:398)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:606)
-	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:44)
-	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:15)
-	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:41)
-	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:20)
-	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:76)
-	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:50)
-	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:193)
-	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:52)
-	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:191)
-	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:42)
-	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:184)
-	at org.junit.runners.ParentRunner.run(ParentRunner.java:236)
-	at org.apache.maven.surefire.junit4.JUnit4TestSet.execute(JUnit4TestSet.java:53)
-	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:123)
-	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:104)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:606)
-	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:164)
-	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:110)
-	at org.apache.maven.surefire.booter.SurefireStarter.invokeProvider(SurefireStarter.java:175)
-	at org.apache.maven.surefire.booter.SurefireStarter.runSuitesInProcessWhenForked(SurefireStarter.java:107)
-	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:68)
-</failure>
-    <system-out>Headers : 2
-Connection: close
-Server: Jetty(8.1.15.v20140411)
----------
-HTTP/1.1
-500
-</system-out>
-  </testcase>
-  <testcase time="3.062" classname="org.snia.cdmiserver.CDMITlsTwoWayTest" name="testContainerDelete">
-    <failure message="expected:&lt;204&gt; but was:&lt;500&gt;" type="java.lang.AssertionError">java.lang.AssertionError: expected:&lt;204&gt; but was:&lt;500&gt;
-	at org.junit.Assert.fail(Assert.java:91)
-	at org.junit.Assert.failNotEquals(Assert.java:645)
-	at org.junit.Assert.assertEquals(Assert.java:126)
-	at org.junit.Assert.assertEquals(Assert.java:470)
-	at org.junit.Assert.assertEquals(Assert.java:454)
-	at org.snia.cdmiserver.CDMITlsTwoWayTest.testContainerDelete(CDMITlsTwoWayTest.java:444)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:606)
-	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:44)
-	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:15)
-	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:41)
-	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:20)
-	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:76)
-	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:50)
-	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:193)
-	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:52)
-	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:191)
-	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:42)
-	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:184)
-	at org.junit.runners.ParentRunner.run(ParentRunner.java:236)
-	at org.apache.maven.surefire.junit4.JUnit4TestSet.execute(JUnit4TestSet.java:53)
-	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:123)
-	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:104)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:606)
-	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:164)
-	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:110)
-	at org.apache.maven.surefire.booter.SurefireStarter.invokeProvider(SurefireStarter.java:175)
-	at org.apache.maven.surefire.booter.SurefireStarter.runSuitesInProcessWhenForked(SurefireStarter.java:107)
-	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:68)
-</failure>
-    <system-out>Headers : 2
-Connection: close
-Server: Jetty(8.1.15.v20140411)
----------
-HTTP/1.1
-500
-</system-out>
-  </testcase>
-  <testcase time="3.074" classname="org.snia.cdmiserver.CDMITlsTwoWayTest" name="testCapabilities">
-    <failure message="expected:&lt;200&gt; but was:&lt;500&gt;" type="java.lang.AssertionError">java.lang.AssertionError: expected:&lt;200&gt; but was:&lt;500&gt;
-	at org.junit.Assert.fail(Assert.java:91)
-	at org.junit.Assert.failNotEquals(Assert.java:645)
-	at org.junit.Assert.assertEquals(Assert.java:126)
-	at org.junit.Assert.assertEquals(Assert.java:470)
-	at org.junit.Assert.assertEquals(Assert.java:454)
-	at org.snia.cdmiserver.CDMITlsTwoWayTest.testCapabilities(CDMITlsTwoWayTest.java:129)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:606)
-	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:44)
-	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:15)
-	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:41)
-	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:20)
-	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:76)
-	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:50)
-	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:193)
-	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:52)
-	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:191)
-	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:42)
-	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:184)
-	at org.junit.runners.ParentRunner.run(ParentRunner.java:236)
-	at org.apache.maven.surefire.junit4.JUnit4TestSet.execute(JUnit4TestSet.java:53)
-	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:123)
-	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:104)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:606)
-	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:164)
-	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:110)
-	at org.apache.maven.surefire.booter.SurefireStarter.invokeProvider(SurefireStarter.java:175)
-	at org.apache.maven.surefire.booter.SurefireStarter.runSuitesInProcessWhenForked(SurefireStarter.java:107)
-	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:68)
-</failure>
-    <system-out>Headers : 2
 Connection: close
 Server: Jetty(8.1.15.v20140411)
 ---------

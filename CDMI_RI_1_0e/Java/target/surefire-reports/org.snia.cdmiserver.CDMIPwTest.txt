@@ -1,15 +1,15 @@
 -------------------------------------------------------------------------------
-Test set: org.snia.cdmiserver.CDMITlsTwoWayTest
+Test set: org.snia.cdmiserver.CDMIPwTest
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 3.664 sec <<< FAILURE!
-testContainerCreate(org.snia.cdmiserver.CDMITlsTwoWayTest)  Time elapsed: 3.62 sec  <<< FAILURE!
+Tests run: 1, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 3.534 sec <<< FAILURE!
+testContainerCreate(org.snia.cdmiserver.CDMIPwTest)  Time elapsed: 3.483 sec  <<< FAILURE!
 java.lang.AssertionError: expected:<201> but was:<500>
 	at org.junit.Assert.fail(Assert.java:91)
 	at org.junit.Assert.failNotEquals(Assert.java:645)
 	at org.junit.Assert.assertEquals(Assert.java:126)
 	at org.junit.Assert.assertEquals(Assert.java:470)
 	at org.junit.Assert.assertEquals(Assert.java:454)
-	at org.snia.cdmiserver.CDMITlsTwoWayTest.testContainerCreate(CDMITlsTwoWayTest.java:202)
+	at org.snia.cdmiserver.CDMIPwTest.testContainerCreate(CDMIPwTest.java:155)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
