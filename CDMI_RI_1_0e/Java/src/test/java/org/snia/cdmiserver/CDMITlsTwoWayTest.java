@@ -184,7 +184,7 @@ public class CDMITlsTwoWayTest {
 
             // Create the request
             HttpResponse response = null;
-            HttpPut httpput = new HttpPut("https://localhost:8543/TestContainer");
+            HttpPut httpput = new HttpPut("https://localhost:8543/TestContainer3");
             httpput.setHeader("Content-Type", "application/cdmi-container");
             httpput.setHeader("X-CDMI-Specification-Version", "1.0.2");
             //httpput.setEntity(new StringEntity("{ \"metadata\" : { } }"));
