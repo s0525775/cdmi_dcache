@@ -79,11 +79,11 @@ public class CDMITlsTwoWayTest {
 
     public static class HelperClass {
         public static void sleep(long ms) {
-            try {
-                Thread.sleep(ms);
-            } catch (InterruptedException ex) {
-                Logger.getLogger(CDMITlsTwoWayTest.class.getName()).log(Level.SEVERE, null, ex);
-            }
+            //try {
+            //    Thread.sleep(ms);
+            //} catch (InterruptedException ex) {
+            //    Logger.getLogger(CDMITlsTwoWayTest.class.getName()).log(Level.SEVERE, null, ex);
+            //}
         }
     }
 
@@ -169,11 +169,65 @@ public class CDMITlsTwoWayTest {
 
             // Create the request
             HttpResponse response = null;
-            HttpPut httpput = new HttpPut("https://localhost:8543/TestContainer3");
+            HttpPut httpput = new HttpPut("https://localhost:8543/TestContainer03");
             httpput.setHeader("Content-Type", "application/cdmi-container");
             httpput.setHeader("X-CDMI-Specification-Version", "1.0.2");
             //httpput.setEntity(new StringEntity("{ \"metadata\" : { } }"));
             httpput.setEntity(new StringEntity("{ \"metadata\" : { \"color\" : \"red\", \"test\" : \"Test\" } }"));
+            response = httpclient.execute(httpput);
+
+            Header[] hdr = response.getAllHeaders();
+            System.out.println("Headers : " + hdr.length);
+            for (int i = 0; i < hdr.length; i++) {
+                System.out.println(hdr[i]);
+            }
+            System.out.println("---------");
+            System.out.println(response.getProtocolVersion());
+            System.out.println(response.getStatusLine().getStatusCode());
+            Assert.assertEquals(201, response.getStatusLine().getStatusCode());
+
+            System.out.println(response.getStatusLine().getReasonPhrase());
+            System.out.println(response.getStatusLine().toString());
+            System.out.println("---------");
+            HttpEntity entity = response.getEntity();
+            if (entity != null) {
+                long len = entity.getContentLength();
+                if (len != -1 && len < 2048) {
+                    System.out.println(EntityUtils.toString(entity));
+                }
+            }
+
+        } catch (Exception ex) {
+            System.out.println(ex);
+        }// exception
+    }
+
+    @Test
+    public void testContainerMove() throws Exception {
+        HelperClass.sleep(3000);
+        HttpClient httpclient;
+
+        try {
+            KeyStore keystore = KeyStore.getInstance(KEYSTORE_TYPE);
+            FileInputStream keystoreInput = new FileInputStream(new File(KEYSTORE));
+            keystore.load(keystoreInput, KEYSTORE_PASSWORD.toCharArray());
+            KeyStore truststore = KeyStore.getInstance(TRUSTSTORE_TYPE);
+            FileInputStream truststoreIs = new FileInputStream(new File(TRUSTSTORE));
+            truststore.load(truststoreIs, TRUSTSTORE_PASSWORD.toCharArray());
+
+            SSLSocketFactory socketFactory = new SSLSocketFactory(keystore, KEYSTORE_PASSWORD, truststore);
+            Scheme scheme = new Scheme("https", 8543, socketFactory);
+            SchemeRegistry registry = new SchemeRegistry();
+            registry.register(scheme);
+            ClientConnectionManager ccm = new PoolingClientConnectionManager(registry);
+            httpclient = new DefaultHttpClient(ccm);
+
+            // Create the request
+            HttpResponse response = null;
+            HttpPut httpput = new HttpPut("https://localhost:8543/TestContainer3");
+            httpput.setHeader("Content-Type", "application/cdmi-container");
+            httpput.setHeader("X-CDMI-Specification-Version", "1.0.2");
+            httpput.setEntity(new StringEntity("{ \"move\" : \"/TestContainer03\", \"metadata\" : { \"color\" : \"red\", \"test\" : \"Test\" } }"));
             response = httpclient.execute(httpput);
 
             Header[] hdr = response.getAllHeaders();
@@ -278,7 +332,7 @@ public class CDMITlsTwoWayTest {
             // Create the request
             HttpResponse response = null;
             HttpPut httpput = new HttpPut(
-                    "https://localhost:8543/TestContainer3/TestObject.txt");
+                    "https://localhost:8543/TestObject2.txt");
             httpput.setHeader("Content-Type", "application/cdmi-object");
             httpput.setHeader("X-CDMI-Specification-Version", "1.0.2");
             String respStr = "{\n";
@@ -300,6 +354,61 @@ public class CDMITlsTwoWayTest {
             System.out.println(response.getProtocolVersion());
             System.out.println(response.getStatusLine().getStatusCode());
             Assert.assertEquals(201, response.getStatusLine().getStatusCode());
+
+            System.out.println(response.getStatusLine().getReasonPhrase());
+            System.out.println(response.getStatusLine().toString());
+            System.out.println("---------");
+
+        } catch (Exception ex) {
+            System.out.println(ex);
+        }// exception
+    }
+
+    @Test
+    public void testObjectMove() throws Exception {
+        HelperClass.sleep(3000);
+        HttpClient httpclient;
+
+        try {
+            KeyStore keystore = KeyStore.getInstance(KEYSTORE_TYPE);
+            FileInputStream keystoreInput = new FileInputStream(new File(KEYSTORE));
+            keystore.load(keystoreInput, KEYSTORE_PASSWORD.toCharArray());
+            KeyStore truststore = KeyStore.getInstance(TRUSTSTORE_TYPE);
+            FileInputStream truststoreIs = new FileInputStream(new File(TRUSTSTORE));
+            truststore.load(truststoreIs, TRUSTSTORE_PASSWORD.toCharArray());
+            SSLSocketFactory socketFactory = new SSLSocketFactory(keystore, KEYSTORE_PASSWORD, truststore);
+            Scheme scheme = new Scheme("https", 8543, socketFactory);
+            SchemeRegistry registry = new SchemeRegistry();
+            registry.register(scheme);
+            ClientConnectionManager ccm = new PoolingClientConnectionManager(registry);
+            httpclient = new DefaultHttpClient(ccm);
+
+            // Create the request
+            HttpResponse response = null;
+            HttpPut httpput = new HttpPut(
+                    "https://localhost:8543/TestContainer3/TestObject.txt");
+            httpput.setHeader("Content-Type", "application/cdmi-object");
+            httpput.setHeader("X-CDMI-Specification-Version", "1.0.2");
+            String respStr = "{\n";
+            respStr = respStr + "\"mimetype\" : \"" + "text/plain" + "\",\n";
+            respStr = respStr + "\"value\" : \"" + "This is a new test" + "\",\n";
+            respStr = respStr + "\"move\" : \"" + "/TestObject2.txt" + "\",\n";
+            respStr = respStr + "\"metadata\" : {" + "\"color\" : \"orange\", \"test\" : \"Test2\"" + "}\n";
+            respStr = respStr + "}\n";
+            System.out.println(respStr);
+            StringEntity entity = new StringEntity(respStr);
+            httpput.setEntity(entity);
+            response = httpclient.execute(httpput);
+
+            Header[] hdr = response.getAllHeaders();
+            System.out.println("Headers : " + hdr.length);
+            for (int i = 0; i < hdr.length; i++) {
+                System.out.println(hdr[i]);
+            }
+            System.out.println("---------");
+            System.out.println(response.getProtocolVersion());
+            System.out.println(response.getStatusLine().getStatusCode());
+            Assert.assertEquals(200, response.getStatusLine().getStatusCode());
 
             System.out.println(response.getStatusLine().getReasonPhrase());
             System.out.println(response.getStatusLine().toString());

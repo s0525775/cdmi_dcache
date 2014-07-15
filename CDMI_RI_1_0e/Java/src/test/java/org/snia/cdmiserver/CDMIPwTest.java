@@ -75,7 +75,7 @@ public class CDMIPwTest {
         }
     }
 
-    @Ignore
+    @Test
     public void testCapabilities() throws Exception {
         HelperClass.sleep(3000);
         HttpClient httpclient = new DefaultHttpClient();
@@ -367,7 +367,7 @@ public class CDMIPwTest {
         }// exception
     }
 
-    @Ignore
+    @Test
     public void testObjectDelete() throws Exception {
         HelperClass.sleep(3000);
         HttpClient httpclient = new DefaultHttpClient();
@@ -401,7 +401,7 @@ public class CDMIPwTest {
         }// exception
     }
 
-    @Ignore
+    @Test
     public void testContainerDelete() throws Exception {
         HelperClass.sleep(3000);
         HttpClient httpclient = new DefaultHttpClient();
