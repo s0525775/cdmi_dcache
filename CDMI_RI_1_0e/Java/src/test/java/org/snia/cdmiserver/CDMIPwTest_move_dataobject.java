@@ -49,7 +49,7 @@ public class CDMIPwTest_move_dataobject {
     private final static String USERNAME = "test";
     private final static String PASSWORD = "test";
     private final static String DATAOBJECT_OBJECTID_FROM = "0000053F0028003400000000000000000000000000000000D42AE8F7BD7D49E8A5A502DEB904E42D"; //it is a 80 characters hex number
-    private final static String DATAOBJECT_PATH_TO = "TestObject2.txt";
+    private final static String DATAOBJECT_PATH_TO = "/TestObject2.txt";
     private final String credentials;
 
     public CDMIPwTest_move_dataobject() {

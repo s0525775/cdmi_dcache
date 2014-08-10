@@ -51,7 +51,7 @@ public class CDMIPwTest_move_container {
     private final static String USERNAME = "test";
     private final static String PASSWORD = "test";
     private final static String CONTAINER_OBJECTID_FROM = "0000053F00280046000000000000000000000000000000006D651B3363FE41FDAB2E96CE7D54AC7C"; //it is a 80 characters hex number
-    private final static String CONTAINER_PATH_TO = "TestContainer4";
+    private final static String CONTAINER_PATH_TO = "/TestContainer4";
     private final String credentials;
 
     public CDMIPwTest_move_container() {
