@@ -58,8 +58,8 @@ public class CDMITlsTwoWayTest_move_dataobject {
     private final static String TRUSTSTORE = "/certs/client/truststore.jks";
     private final static String TRUSTSTORE_PASSWORD = "test123";
     private final static String TRUSTSTORE_TYPE = "JKS";
-    private final static String DATAOBJECT_OBJECTID_FROM = ""; //it is a 80 characters hex number
-    private final static String DATAOBJECT_PATH_TO = "";
+    private final static String DATAOBJECT_OBJECTID_FROM = "0000053F0028003400000000000000000000000000000000D42AE8F7BD7D49E8A5A502DEB904E42D"; //it is a 80 characters hex number
+    private final static String DATAOBJECT_PATH_TO = "/TestContainer2/TestObject.txt";
 
     static {
         System.setProperty("javax.net.debug", "ssl,handshake,record");
@@ -97,12 +97,12 @@ public class CDMITlsTwoWayTest_move_dataobject {
             // Create the request
             HttpResponse response = null;
             HttpPut httpput = new HttpPut(
-                    "https://localhost:8543/" + DATAOBJECT_PATH_TO);
+                    "https://localhost:8543" + DATAOBJECT_PATH_TO);
             httpput.setHeader("Content-Type", "application/cdmi-object");
             httpput.setHeader("X-CDMI-Specification-Version", "1.0.2");
             String respStr = "{\n";
             respStr = respStr + "\"mimetype\" : \"" + "text/plain" + "\",\n";
-            respStr = respStr + "\"move\" : \"" + "/cdmi_object_id/" + DATAOBJECT_OBJECTID_FROM + "\",\n";
+            respStr = respStr + "\"move\" : \"" + "/cdmi_objectid/" + DATAOBJECT_OBJECTID_FROM + "\",\n";
             respStr = respStr + "\"metadata\" : {" + "\"color\" : \"orange\", \"test\" : \"Test2\"" + "}\n";
             respStr = respStr + "}\n";
             System.out.println(respStr);

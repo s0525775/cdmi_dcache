@@ -48,8 +48,8 @@ public class CDMIPwTest_move_dataobject {
 
     private final static String USERNAME = "test";
     private final static String PASSWORD = "test";
-    private final static String DATAOBJECT_OBJECTID_FROM = ""; //it is a 80 characters hex number
-    private final static String DATAOBJECT_PATH_TO = "";
+    private final static String DATAOBJECT_OBJECTID_FROM = "0000053F0028003400000000000000000000000000000000D42AE8F7BD7D49E8A5A502DEB904E42D"; //it is a 80 characters hex number
+    private final static String DATAOBJECT_PATH_TO = "TestObject2.txt";
     private final String credentials;
 
     public CDMIPwTest_move_dataobject() {
@@ -76,13 +76,13 @@ public class CDMIPwTest_move_dataobject {
             // Create the request
             HttpResponse response = null;
             HttpPut httpput = new HttpPut(
-                    "http://localhost:8542/" + DATAOBJECT_PATH_TO);
+                    "http://localhost:8542" + DATAOBJECT_PATH_TO);
             httpput.setHeader("Content-Type", "application/cdmi-object");
             httpput.setHeader("X-CDMI-Specification-Version", "1.0.2");
             httpput.setHeader("Authorization", "Basic " + credentials);
             String respStr = "{\n";
             respStr = respStr + "\"mimetype\" : \"" + "text/plain" + "\",\n";
-            respStr = respStr + "\"move\" : \"" + "/cdmi_object_id/" + DATAOBJECT_OBJECTID_FROM + "\",\n";
+            respStr = respStr + "\"move\" : \"" + "/cdmi_objectid/" + DATAOBJECT_OBJECTID_FROM + "\",\n";
             respStr = respStr + "\"metadata\" : {" + "\"color\" : \"orange\", \"test\" : \"Test2\"" + "}\n";
             respStr = respStr + "}\n";
             System.out.println(respStr);

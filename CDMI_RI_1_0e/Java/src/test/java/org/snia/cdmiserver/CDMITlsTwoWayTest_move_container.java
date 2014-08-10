@@ -60,8 +60,8 @@ public class CDMITlsTwoWayTest_move_container {
     private final static String TRUSTSTORE = "/certs/client/truststore.jks";
     private final static String TRUSTSTORE_PASSWORD = "test123";
     private final static String TRUSTSTORE_TYPE = "JKS";
-    private final static String CONTAINER_OBJECTID_FROM = ""; //it is a 80 characters hex number
-    private final static String CONTAINER_PATH_TO = "";
+    private final static String CONTAINER_OBJECTID_FROM = "0000053F00280046000000000000000000000000000000006D651B3363FE41FDAB2E96CE7D54AC7C"; //it is a 80 characters hex number
+    private final static String CONTAINER_PATH_TO = "/TestContainer2";
 
     static {
         System.setProperty("javax.net.debug", "ssl,handshake,record");
@@ -99,10 +99,10 @@ public class CDMITlsTwoWayTest_move_container {
 
             // Create the request
             HttpResponse response = null;
-            HttpPut httpput = new HttpPut("https://localhost:8543/" + CONTAINER_PATH_TO);
+            HttpPut httpput = new HttpPut("https://localhost:8543" + CONTAINER_PATH_TO);
             httpput.setHeader("Content-Type", "application/cdmi-container");
             httpput.setHeader("X-CDMI-Specification-Version", "1.0.2");
-            httpput.setEntity(new StringEntity("{ \"move\" : \"/cdmi_object_id/" + CONTAINER_OBJECTID_FROM + "\", \"metadata\" : { \"color\" : \"red\", \"test\" : \"Test\" } }"));
+            httpput.setEntity(new StringEntity("{ \"move\" : \"/cdmi_objectid/" + CONTAINER_OBJECTID_FROM + "\", \"metadata\" : { \"color\" : \"red\", \"test\" : \"Test\" } }"));
             response = httpclient.execute(httpput);
 
             Header[] hdr = response.getAllHeaders();

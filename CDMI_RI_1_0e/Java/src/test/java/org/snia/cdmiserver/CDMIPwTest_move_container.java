@@ -50,8 +50,8 @@ public class CDMIPwTest_move_container {
 
     private final static String USERNAME = "test";
     private final static String PASSWORD = "test";
-    private final static String CONTAINER_OBJECTID_FROM = ""; //it is a 80 characters hex number
-    private final static String CONTAINER_PATH_TO = "";
+    private final static String CONTAINER_OBJECTID_FROM = "0000053F00280046000000000000000000000000000000006D651B3363FE41FDAB2E96CE7D54AC7C"; //it is a 80 characters hex number
+    private final static String CONTAINER_PATH_TO = "TestContainer4";
     private final String credentials;
 
     public CDMIPwTest_move_container() {
@@ -77,11 +77,11 @@ public class CDMIPwTest_move_container {
         try {
             // Create the request
             HttpResponse response = null;
-            HttpPut httpput = new HttpPut("http://localhost:8542/" + CONTAINER_PATH_TO);
+            HttpPut httpput = new HttpPut("http://localhost:8542" + CONTAINER_PATH_TO);
             httpput.setHeader("Content-Type", "application/cdmi-container");
             httpput.setHeader("X-CDMI-Specification-Version", "1.0.2");
             httpput.setHeader("Authorization", "Basic " + credentials);
-            httpput.setEntity(new StringEntity("{ \"move\" : \"/cdmi_object_id/" + CONTAINER_OBJECTID_FROM + "\", \"metadata\" : { \"color\" : \"red\", \"test\" : \"Test\" } }"));
+            httpput.setEntity(new StringEntity("{ \"move\" : \"/cdmi_objectid/" + CONTAINER_OBJECTID_FROM + "\", \"metadata\" : { \"color\" : \"red\", \"test\" : \"Test\" } }"));
             response = httpclient.execute(httpput);
 
             Header[] hdr = response.getAllHeaders();
