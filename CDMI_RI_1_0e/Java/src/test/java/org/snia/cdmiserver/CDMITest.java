@@ -43,8 +43,10 @@ import org.apache.http.entity.StringEntity;
 import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.util.EntityUtils;
 import org.junit.Assert;
+import org.junit.FixMethodOrder;
 import org.junit.Ignore;
 import org.junit.Test;
+import org.junit.runners.MethodSorters;
 
 /**
  * REMARK (from Jana):
@@ -66,6 +68,8 @@ import org.junit.Test;
  *
  * @author Mark A. Carlson
  */
+// http://stackoverflow.com/questions/15754094/how-to-make-junit-test-run-methods-in-order
+@FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class CDMITest {
 
     public static class HelperClass {
@@ -79,7 +83,7 @@ public class CDMITest {
     }
 
     @Test
-    public void testCapabilities() throws Exception {
+    public void test01_Capabilities() throws Exception {
         HelperClass.sleep(3000);
         HttpClient httpclient = new DefaultHttpClient();
 
@@ -118,7 +122,7 @@ public class CDMITest {
     }
 
     @Test
-    public void testContainerCreate() throws Exception {
+    public void test02_ContainerCreate() throws Exception {
         HelperClass.sleep(3000);
         HttpClient httpclient = new DefaultHttpClient();
 
@@ -159,7 +163,7 @@ public class CDMITest {
     }
 
     @Test
-    public void testContainerUpdate() throws Exception {
+    public void test03_ContainerUpdate() throws Exception {
         HelperClass.sleep(3000);
         HttpClient httpclient = new DefaultHttpClient();
 
@@ -181,7 +185,7 @@ public class CDMITest {
             System.out.println("---------");
             System.out.println(response.getProtocolVersion());
             System.out.println(response.getStatusLine().getStatusCode());
-            Assert.assertEquals(201, response.getStatusLine().getStatusCode());
+            Assert.assertEquals(200, response.getStatusLine().getStatusCode());
 
             System.out.println(response.getStatusLine().getReasonPhrase());
             System.out.println(response.getStatusLine().toString());
@@ -200,7 +204,7 @@ public class CDMITest {
     }
 
     @Test
-    public void testObjectCreate() throws Exception {
+    public void test04_ObjectCreate() throws Exception {
         HelperClass.sleep(3000);
         HttpClient httpclient = new DefaultHttpClient();
 
@@ -241,7 +245,7 @@ public class CDMITest {
     }
 
     @Test
-    public void testObjectUpdate() throws Exception {
+    public void test05_ObjectUpdate() throws Exception {
         HelperClass.sleep(3000);
         HttpClient httpclient = new DefaultHttpClient();
 
@@ -282,7 +286,7 @@ public class CDMITest {
     }
 
     @Test
-    public void testObjectDelete() throws Exception {
+    public void test06_ObjectDelete() throws Exception {
         HelperClass.sleep(3000);
         HttpClient httpclient = new DefaultHttpClient();
 
@@ -315,7 +319,7 @@ public class CDMITest {
     }
 
     @Test
-    public void testContainerDelete() throws Exception {
+    public void test07_ContainerDelete() throws Exception {
         HelperClass.sleep(3000);
         HttpClient httpclient = new DefaultHttpClient();
 

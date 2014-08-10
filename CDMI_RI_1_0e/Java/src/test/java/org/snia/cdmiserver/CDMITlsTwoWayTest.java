@@ -20,13 +20,10 @@ package org.snia.cdmiserver;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.InputStream;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
 import org.apache.http.Header;
 import org.apache.http.client.HttpClient;
-import org.apache.http.client.methods.HttpDelete;
 import org.apache.http.client.methods.HttpPut;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.entity.StringEntity;
@@ -41,8 +38,10 @@ import org.apache.http.conn.scheme.SchemeRegistry;
 import org.apache.http.conn.ssl.SSLSocketFactory;
 import org.apache.http.impl.conn.PoolingClientConnectionManager;
 import org.junit.Assert;
+import org.junit.FixMethodOrder;
 import org.junit.Ignore;
 import org.junit.Test;
+import org.junit.runners.MethodSorters;
 
 /**
  * REMARK (from Jana):
@@ -60,10 +59,8 @@ import org.junit.Test;
  * The port in CDMItest can be replaced by a variable, or by using the replace function of NetBeans.
  */
 
-/**
- *
- * @author Mark A. Carlson
- */
+// http://stackoverflow.com/questions/15754094/how-to-make-junit-test-run-methods-in-order
+@FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class CDMITlsTwoWayTest {
     private final static String X509_CERT = "/certs/client/mycert.p12";
     private final static String KEYSTORE = "/certs/client/keystore.jks";
@@ -88,7 +85,7 @@ public class CDMITlsTwoWayTest {
     }
 
     @Test
-    public void testCapabilities() throws Exception {
+    public void test01_Capabilities() throws Exception {
         HelperClass.sleep(3000);
         HttpClient httpclient;
 
@@ -148,7 +145,7 @@ public class CDMITlsTwoWayTest {
     }
 
     @Test
-    public void testContainerCreate() throws Exception {
+    public void test02_ContainerCreate() throws Exception {
         HelperClass.sleep(3000);
         HttpClient httpclient;
 
@@ -203,7 +200,7 @@ public class CDMITlsTwoWayTest {
     }
 
     @Test
-    public void testContainerMove() throws Exception {
+    public void test03_ContainerMove() throws Exception {
         HelperClass.sleep(3000);
         HttpClient httpclient;
 
@@ -238,7 +235,7 @@ public class CDMITlsTwoWayTest {
             System.out.println("---------");
             System.out.println(response.getProtocolVersion());
             System.out.println(response.getStatusLine().getStatusCode());
-            Assert.assertEquals(201, response.getStatusLine().getStatusCode());
+            Assert.assertEquals(200, response.getStatusLine().getStatusCode());
 
             System.out.println(response.getStatusLine().getReasonPhrase());
             System.out.println(response.getStatusLine().toString());
@@ -257,7 +254,7 @@ public class CDMITlsTwoWayTest {
     }
 
     @Test
-    public void testContainerUpdate() throws Exception {
+    public void test04_ContainerUpdate() throws Exception {
         HelperClass.sleep(3000);
         HttpClient httpclient;
 
@@ -292,7 +289,7 @@ public class CDMITlsTwoWayTest {
             System.out.println("---------");
             System.out.println(response.getProtocolVersion());
             System.out.println(response.getStatusLine().getStatusCode());
-            Assert.assertEquals(201, response.getStatusLine().getStatusCode());
+            Assert.assertEquals(200, response.getStatusLine().getStatusCode());
 
             System.out.println(response.getStatusLine().getReasonPhrase());
             System.out.println(response.getStatusLine().toString());
@@ -311,7 +308,7 @@ public class CDMITlsTwoWayTest {
     }
 
     @Test
-    public void testObjectCreate() throws Exception {
+    public void test05_ObjectCreate() throws Exception {
         HelperClass.sleep(3000);
         HttpClient httpclient;
 
@@ -365,7 +362,7 @@ public class CDMITlsTwoWayTest {
     }
 
     @Test
-    public void testObjectMove() throws Exception {
+    public void test06_ObjectMove() throws Exception {
         HelperClass.sleep(3000);
         HttpClient httpclient;
 
@@ -420,7 +417,7 @@ public class CDMITlsTwoWayTest {
     }
 
     @Test
-    public void testObjectUpdate() throws Exception {
+    public void test07_ObjectUpdate() throws Exception {
         HelperClass.sleep(3000);
         HttpClient httpclient;
 
@@ -472,97 +469,4 @@ public class CDMITlsTwoWayTest {
             System.out.println(ex);
         }// exception
     }
-
-    @Test
-    public void testObjectDelete() throws Exception {
-        HelperClass.sleep(3000);
-        HttpClient httpclient;
-
-        try {
-            KeyStore keystore = KeyStore.getInstance(KEYSTORE_TYPE);
-            FileInputStream keystoreInput = new FileInputStream(new File(KEYSTORE));
-            keystore.load(keystoreInput, KEYSTORE_PASSWORD.toCharArray());
-            KeyStore truststore = KeyStore.getInstance(TRUSTSTORE_TYPE);
-            FileInputStream truststoreIs = new FileInputStream(new File(TRUSTSTORE));
-            truststore.load(truststoreIs, TRUSTSTORE_PASSWORD.toCharArray());
-            SSLSocketFactory socketFactory = new SSLSocketFactory(keystore, KEYSTORE_PASSWORD, truststore);
-            Scheme scheme = new Scheme("https", 8543, socketFactory);
-            SchemeRegistry registry = new SchemeRegistry();
-            registry.register(scheme);
-            ClientConnectionManager ccm = new PoolingClientConnectionManager(registry);
-            httpclient = new DefaultHttpClient(ccm);
-
-            // Create the request
-            HttpResponse response = null;
-            HttpDelete httpdelete = new HttpDelete(
-                    "https://localhost:8543/TestContainer3/TestObject.txt");
-            httpdelete.setHeader("Content-Type", "application/cdmi-object");
-            httpdelete.setHeader("X-CDMI-Specification-Version", "1.0.2");
-            response = httpclient.execute(httpdelete);
-
-            Header[] hdr = response.getAllHeaders();
-            System.out.println("Headers : " + hdr.length);
-            for (int i = 0; i < hdr.length; i++) {
-                System.out.println(hdr[i]);
-            }
-            System.out.println("---------");
-            System.out.println(response.getProtocolVersion());
-            System.out.println(response.getStatusLine().getStatusCode());
-            Assert.assertEquals(204, response.getStatusLine().getStatusCode());
-
-            System.out.println(response.getStatusLine().getReasonPhrase());
-            System.out.println(response.getStatusLine().toString());
-            System.out.println("---------");
-
-        } catch (Exception ex) {
-            System.out.println(ex);
-        }// exception
-    }
-
-    @Test
-    public void testContainerDelete() throws Exception {
-        HelperClass.sleep(3000);
-        HttpClient httpclient;
-
-        try {
-            KeyStore keystore = KeyStore.getInstance(KEYSTORE_TYPE);
-            FileInputStream keystoreInput = new FileInputStream(new File(KEYSTORE));
-            keystore.load(keystoreInput, KEYSTORE_PASSWORD.toCharArray());
-            KeyStore truststore = KeyStore.getInstance(TRUSTSTORE_TYPE);
-            FileInputStream truststoreIs = new FileInputStream(new File(TRUSTSTORE));
-            truststore.load(truststoreIs, TRUSTSTORE_PASSWORD.toCharArray());
-            SSLSocketFactory socketFactory = new SSLSocketFactory(keystore, KEYSTORE_PASSWORD, truststore);
-            Scheme scheme = new Scheme("https", 8543, socketFactory);
-            SchemeRegistry registry = new SchemeRegistry();
-            registry.register(scheme);
-            ClientConnectionManager ccm = new PoolingClientConnectionManager(registry);
-            httpclient = new DefaultHttpClient(ccm);
-
-            // Create the request
-            HttpResponse response = null;
-            HttpDelete httpdelete = new HttpDelete(
-                    "https://localhost:8543/TestContainer3");
-            httpdelete.setHeader("Content-Type", "application/cdmi-container");
-            httpdelete.setHeader("X-CDMI-Specification-Version", "1.0.2");
-            response = httpclient.execute(httpdelete);
-
-            Header[] hdr = response.getAllHeaders();
-            System.out.println("Headers : " + hdr.length);
-            for (int i = 0; i < hdr.length; i++) {
-                System.out.println(hdr[i]);
-            }
-            System.out.println("---------");
-            System.out.println(response.getProtocolVersion());
-            System.out.println(response.getStatusLine().getStatusCode());
-            Assert.assertEquals(204, response.getStatusLine().getStatusCode());
-
-            System.out.println(response.getStatusLine().getReasonPhrase());
-            System.out.println(response.getStatusLine().toString());
-            System.out.println("---------");
-
-        } catch (Exception ex) {
-            System.out.println(ex);
-        }// exception
-    }
-
 }

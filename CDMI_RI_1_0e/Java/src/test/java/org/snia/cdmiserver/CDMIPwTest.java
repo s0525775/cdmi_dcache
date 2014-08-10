@@ -17,8 +17,6 @@
  */
 package org.snia.cdmiserver;
 
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import org.apache.axiom.om.util.Base64;
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
@@ -31,8 +29,10 @@ import org.apache.http.entity.StringEntity;
 import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.util.EntityUtils;
 import org.junit.Assert;
+import org.junit.FixMethodOrder;
 import org.junit.Ignore;
 import org.junit.Test;
+import org.junit.runners.MethodSorters;
 
 /**
  * REMARK (from Jana):
@@ -50,10 +50,8 @@ import org.junit.Test;
  * The port in CDMItest can be replaced by a variable, or by using the replace function of NetBeans.
  */
 
-/**
- *
- * @author Mark A. Carlson
- */
+// http://stackoverflow.com/questions/15754094/how-to-make-junit-test-run-methods-in-order
+@FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class CDMIPwTest {
 
     private final static String USERNAME = "test";
@@ -76,7 +74,7 @@ public class CDMIPwTest {
     }
 
     @Test
-    public void testCapabilities() throws Exception {
+    public void test01_Capabilities() throws Exception {
         HelperClass.sleep(3000);
         HttpClient httpclient = new DefaultHttpClient();
 
@@ -116,7 +114,7 @@ public class CDMIPwTest {
     }
 
     @Test
-    public void testContainerCreate() throws Exception {
+    public void test02_ContainerCreate() throws Exception {
         HelperClass.sleep(3000);
         HttpClient httpclient = new DefaultHttpClient();
 
@@ -158,7 +156,7 @@ public class CDMIPwTest {
     }
 
     @Test
-    public void testContainerMove() throws Exception {
+    public void test03_ContainerMove() throws Exception {
         HelperClass.sleep(3000);
         HttpClient httpclient = new DefaultHttpClient();
 
@@ -180,7 +178,7 @@ public class CDMIPwTest {
             System.out.println("---------");
             System.out.println(response.getProtocolVersion());
             System.out.println(response.getStatusLine().getStatusCode());
-            Assert.assertEquals(201, response.getStatusLine().getStatusCode());
+            Assert.assertEquals(200, response.getStatusLine().getStatusCode());
 
             System.out.println(response.getStatusLine().getReasonPhrase());
             System.out.println(response.getStatusLine().toString());
@@ -199,7 +197,7 @@ public class CDMIPwTest {
     }
 
     @Test
-    public void testContainerUpdate() throws Exception {
+    public void test04_ContainerUpdate() throws Exception {
         HelperClass.sleep(3000);
         HttpClient httpclient = new DefaultHttpClient();
 
@@ -222,7 +220,7 @@ public class CDMIPwTest {
             System.out.println("---------");
             System.out.println(response.getProtocolVersion());
             System.out.println(response.getStatusLine().getStatusCode());
-            Assert.assertEquals(201, response.getStatusLine().getStatusCode());
+            Assert.assertEquals(200, response.getStatusLine().getStatusCode());
 
             System.out.println(response.getStatusLine().getReasonPhrase());
             System.out.println(response.getStatusLine().toString());
@@ -241,7 +239,7 @@ public class CDMIPwTest {
     }
 
     @Test
-    public void testObjectCreate() throws Exception {
+    public void test05_ObjectCreate() throws Exception {
         HelperClass.sleep(3000);
         HttpClient httpclient = new DefaultHttpClient();
 
@@ -283,7 +281,7 @@ public class CDMIPwTest {
     }
 
     @Test
-    public void testObjectMove() throws Exception {
+    public void test06_ObjectMove() throws Exception {
         HelperClass.sleep(3000);
         HttpClient httpclient = new DefaultHttpClient();
 
@@ -326,7 +324,7 @@ public class CDMIPwTest {
     }
 
     @Test
-    public void testObjectUpdate() throws Exception {
+    public void test07_ObjectUpdate() throws Exception {
         HelperClass.sleep(3000);
         HttpClient httpclient = new DefaultHttpClient();
 
@@ -367,8 +365,8 @@ public class CDMIPwTest {
         }// exception
     }
 
-    @Test
-    public void testObjectDelete() throws Exception {
+    @Ignore
+    public void test08_ObjectDelete() throws Exception {
         HelperClass.sleep(3000);
         HttpClient httpclient = new DefaultHttpClient();
 
@@ -401,8 +399,8 @@ public class CDMIPwTest {
         }// exception
     }
 
-    @Test
-    public void testContainerDelete() throws Exception {
+    @Ignore
+    public void test09_ContainerDelete() throws Exception {
         HelperClass.sleep(3000);
         HttpClient httpclient = new DefaultHttpClient();
 
@@ -434,4 +432,5 @@ public class CDMIPwTest {
             System.out.println(ex);
         }// exception
     }
+
 }
