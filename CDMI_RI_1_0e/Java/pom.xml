@@ -41,7 +41,7 @@
   <artifactId>cdmi-server</artifactId>
   <version>0.1-SNAPSHOT</version>
   <packaging>war</packaging>
-  <name>org.snia - CDMI Server</name>
+  <name>org.snia - CDMI - Tests</name>
   <description>CDMI Server Implementation</description>
 
   <!-- You don't need to install the Jetty plugin for NetBeans, it won't work anyway. -->
